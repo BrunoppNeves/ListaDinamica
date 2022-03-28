@@ -104,7 +104,7 @@ public class ListaDinamica {
         return removido;
     }
 
-    public void exibir() { //OK
+    public void exibir() {//OK
         No aux = primeiro;
         while (aux != null) {
             System.out.print(aux.dado);
