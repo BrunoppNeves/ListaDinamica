@@ -6,7 +6,8 @@ public class DinamicaMain {
         lista.addFinal(1);
         lista.addFinal(5);
         lista.addFinal(6);
-        lista.removerFinal();
+        lista.addPosicao(1,1);
+        lista.removerPosicao(1);
         lista.exibir();
 
     }

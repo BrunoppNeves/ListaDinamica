@@ -63,7 +63,7 @@ public class ListaDinamica {
         return removido;
     }
 
-    public void addPosicao(int elemento, int posicao) {
+    public void addPosicao(int elemento, int posicao) { //Ok
         if (vazia()) {
             addInicio(elemento);
         } else {
@@ -83,12 +83,28 @@ public class ListaDinamica {
         }
     }
 
-    public No removerPosicao(int posicao) {
+    public No removerPosicao(int posicao) throws Exception { //OK
         No removido = null;
+        No aux = null;
+        if (vazia() || posicao <= 1)
+            removido = removerInicio();
+        else {
+            removido = aux = primeiro;
+            int indice = 1;
+            while (indice < posicao && removido != null) {
+                aux = removido;
+                removido = removido.proximo;
+                indice++;
+            }
+            if (removido == null)
+                removido = removerFinal();
+            else
+                aux.proximo = removido.proximo;
+        }
         return removido;
     }
 
-    public void exibir() {
+    public void exibir() { //OK
         No aux = primeiro;
         while (aux != null) {
             System.out.print(aux.dado);
